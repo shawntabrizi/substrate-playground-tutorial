@@ -1,0 +1,52 @@
+body {
+	font-family: "Lato", sans-serif;
+  }
+  
+  .open {
+	position:absolute;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color: #18ffb2;
+	color:#000;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	cursor: move;
+	z-index: 2;
+  }
+
+  .open-icon{
+	margin-top:10px;
+	cursor: pointer;
+}
+
+  .side {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+  }
+
+  .side a:hover {
+	color: #f1f1f1;
+  }
+  
+  .side .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+	.side {padding-top: 15px;}
+	.side a {font-size: 18px;}
+  }
