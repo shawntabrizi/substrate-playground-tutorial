@@ -1,16 +1,20 @@
-let open = 0;
+let open = 1;
+let tutorial = document.getElementById('tutorial');
 
 function toggleSide() {
   if (open == 0) {
-    document.getElementById('tutorial').style.width = '0';
+	tutorial.style.width = '0%';
+	tutorial.style.minWidth = '0px';
 	document.getElementById('open-icon').innerText = 'Tutorial';
 	open = 1;
   } else if (open == 1) {
-	document.getElementById('tutorial').style.width = '50%';
+	tutorial.style.width = '50%';
+	tutorial.style.minWidth = '500px';
 	document.getElementById('open-icon').innerText = 'Full';
 	open = 2;
   } else if (open == 2) {
-	document.getElementById('tutorial').style.width = '100%';
+	tutorial.style.width = '100%';
+	tutorial.style.minWidth = '500px';
 	document.getElementById('open-icon').innerText = 'Hide';
 	open = 0;
   }

@@ -8,16 +8,46 @@
 
 <head>
 	<title>Tutorials</title>
-	<link rel="stylesheet" type="text/css" href="tutorials.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
-	<h1>Tutorials</h1>
-	<ul>
-	<li><a href="https://www.shawntabrizi.com/substrate-beginner-workshop/">Beginner Workshop</a></li>
-	<li><a href="https://substrate.dev/substrate-collectables-workshop/">Substrate Kitties</a></li>
-	<li><a href="https://substrate.dev/docs/en/tutorials/build-a-dapp/">Substrate Dev Hub: Proof Of Existence</a></li>
-</ul>
+	<div class="container">
+		<h1 class="mt-5">Tutorials</h1>
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="row no-gutters">
+				<div class="col-4">
+					<img src="https://substrate.dev/img/first-substrate-chain.png" class="card-img">
+				</div>
+				<div class="col-8">
+					<div class="card-body">
+						<h5 class="card-title">Substrate Beginner Workshop</h5>
+						<p class="card-text">Build your first custom blockchain with the Substrate FRAMEwork.</p>
+						<a href="https://www.shawntabrizi.com/substrate-beginner-workshop/"
+							class="btn btn-primary">Start</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="row no-gutters">
+				<div class="col-4">
+					<img src="https://substrate.dev/img/crates.png" class="card-img" alt="...">
+				</div>
+				<div class="col-8">
+					<div class="card-body">
+						<h5 class="card-title">Add a Pallet to your Runtime</h5>
+						<p class="card-text">Add the Contracts pallet or other FRAME pallets to your Substrate node
+							template.</p>
+						<a href="https://substrate.dev/docs/en/tutorials/adding-a-module-to-your-runtime/"
+							class="btn btn-primary">Start</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a target="_blank" href="https://substrate.dev/tutorials/" class="btn btn-primary">See more tutorials ></a>
+	</div>
 </body>
 
 </html>
