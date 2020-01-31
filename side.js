@@ -1,15 +1,19 @@
-let open = false;
+let open = 0;
 
 function toggleSide() {
-  if (open) {
+  if (open == 0) {
     document.getElementById('tutorial').style.width = '0';
-    document.getElementById('open-icon').innerText = 'Tutorial';
-  } else {
-    document.getElementById('tutorial').style.width = '50%';
-    document.getElementById('open-icon').innerText = 'Hide';
+	document.getElementById('open-icon').innerText = 'Tutorial';
+	open = 1;
+  } else if (open == 1) {
+	document.getElementById('tutorial').style.width = '50%';
+	document.getElementById('open-icon').innerText = 'Full';
+	open = 2;
+  } else if (open == 2) {
+	document.getElementById('tutorial').style.width = '100%';
+	document.getElementById('open-icon').innerText = 'Hide';
+	open = 0;
   }
-
-  open = !open;
 }
 
 // Make the DIV element draggable:
