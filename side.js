@@ -36,18 +36,23 @@ function dragElement(elmnt) {
   elmnt.onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
+    // Allow drag over iframe.
+    let iframes = document.getElementsByTagName('iframe');
+    Array.from(iframes).map(e => (e.style.pointerEvents = 'none'));
+    // Assume this is not a drag to start
     drag = false;
     e = e || window.event;
     e.preventDefault();
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
-	document.onmouseup = closeDragElement;
+    document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
   }
 
   function elementDrag(e) {
+    // Now we know this is a drag.
     drag = true;
     e = e || window.event;
     e.preventDefault();
@@ -74,5 +79,8 @@ function dragElement(elmnt) {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
+    // re-enable iframe pointer events
+    let iframes = document.getElementsByTagName('iframe');
+    Array.from(iframes).map(e => (e.style.pointerEvents = 'auto'));
   }
 }
