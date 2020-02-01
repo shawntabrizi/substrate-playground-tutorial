@@ -27,6 +27,8 @@ openButton = document.getElementById('open');
 dragElement(openButton);
 
 function dragElement(elmnt) {
+  var originalX = 0,
+    originalY = 0;
   var pos1 = 0,
     pos2 = 0,
     pos3 = 0,
@@ -46,6 +48,8 @@ function dragElement(elmnt) {
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
+    originalX = e.clientX;
+    originalY = e.clientY;
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
@@ -73,7 +77,10 @@ function dragElement(elmnt) {
   }
 
   function closeDragElement() {
-    if (!drag) {
+    // Make small drags count as clicks.
+    let difX = Math.abs(originalX - pos3);
+    let difY = Math.abs(originalY - pos4);
+    if (!drag || (difX < 10 && difY < 10)) {
       toggleSide();
     }
     // stop moving when mouse button is released:
